@@ -18,7 +18,7 @@ The current state of the tool is a proof-of-concept that will import AWS Lambda 
 
 - [Neo4j AuraDb](https://neo4j.com/cloud/aura-free/) cloud-hosted database created (there is a free tier available to run this PoC).
 - Python 3 development environment (e.g. [VSCode](https://code.visualstudio.com/docs/python/python-tutorial) )
-- TFState file
+- TFState file (provided separately)
 
 ### Python Packages
 
@@ -41,7 +41,11 @@ Execute `import.py` from within your development environment.
 
 There's currently no error handling so the import will succeed silently, or throw an error on issue.
 
-You can confirm that it has worked through your  Neo4j workspace:
+The import script will clear down the database before importing, so can be run multiple times without issue.
+
+### Checking the results
+
+You can confirm that it has worked through your Neo4j workspace:
 
 The following Cypher [query](https://workspace-preview.neo4j.io/workspace/query) should show AWS Lambda Functions, SQS Queues and Relationships:
 
@@ -51,7 +55,7 @@ Or "Show me a graph" in the [explorer](https://workspace-preview.neo4j.io/worksp
 
 ## Useful Resources
 
-- [Neo4j Cypher] (https://neo4j.com/docs/getting-started/cypher-intro/) Graph Query Language
+- [Neo4j Cypher](https://neo4j.com/docs/getting-started/cypher-intro/) Graph Query Language
 - [Neo4j Workspace Explorer](https://workspace-preview.neo4j.io/workspace/query) to run queries and visualisations
 - [Neo4J Python Driver Guide](https://neo4j.com/docs/python-manual/current/)
 - [Neo4J Python Driver Reference](https://neo4j.com/docs/api/python-driver/current/)
